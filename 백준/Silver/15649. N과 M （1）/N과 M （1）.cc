@@ -8,29 +8,25 @@
 // 완전 탐색 기법에 기반하며 완전 탐색 기법 중 하나로 DFS를 사용
 // DFS는 모든 가능한 해(경로)를 탐색 하는 반면, 백트래킹은 불필요한 경로는 사전에 차단하여 탐색하지 않고 최대한 올바른 해를 탐색합니다. 
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
 #define MAX 9
 using namespace std;
-int N, M;
-vector<int> graph;
+int A, B;
+vector<int> arr;
 
 int main() {
-	cin >> N >> M;
+	cin >> A >> B;
 
-	for(int i=1; i<= N; i++){
-		graph.push_back(i);
+	for(int i=1; i<=A; i++){
+		arr.push_back(i);
 	}
 
 	do{
-		for(int i =0; i <M; i++){
-			cout << graph[i] << " ";
+		for(int i=0; i<B; i++){
+			cout << arr[i] << " ";
 		}
 		cout << "\n";
-		reverse(graph.begin() + M, graph.end());
-	}while(next_permutation(graph.begin(), graph.end()));
+		reverse(arr.begin()+B, arr.end()); //
+	}while(next_permutation(arr.begin(), arr.end()));
 	
 	return 0;
 }

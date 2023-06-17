@@ -4,8 +4,7 @@ def solution(players, callings):
 
     for calling in callings:
         index = value_dict[calling]
-        if index == 0:
-            continue
+    
         tmp_index = index_dict[index - 1]
         tmp_value = index_dict[index - 1]
         index_dict[index - 1] = calling

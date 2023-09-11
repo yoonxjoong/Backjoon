@@ -1,0 +1,12 @@
+-- 코드를 입력하세요
+SELECT t1.TITLE
+       , t1.BOARD_ID
+       , t2.REPLY_ID
+       , t2.WRITER_ID
+       , t2.CONTENTS
+       , left(t2.CREATED_DATE, 10)
+  FROM USED_GOODS_BOARD t1
+       , USED_GOODS_REPLY t2 
+ WHERE t1.BOARD_ID = t2.BOARD_ID
+   AND t1.CREATED_DATE LIKE '2022-10%'
+ ORDER BY t2.CREATED_DATE, t1.TITLE
